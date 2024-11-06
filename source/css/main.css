@@ -1,0 +1,122 @@
+/*
+	@modCssClasses
+	@customTag: textarea-box
+	@cssMod: mod_small
+	--theme-transitionDuration 			0.15s
+	--theme-highlightedBackgroundColor 	rgba(0, 0, 0, 0.1)
+	--theme-errorBackgroundColor 		rgba(255, 0, 0, 0.2)
+	--theme-secondaryFont 				rgba(0, 0, 0, 0.6)
+	--theme-mainFont 					rgba(0, 0, 0, 1)
+	--theme-inputBackgroundColor 		rgba(0, 0, 0, 0)
+	--theme-errorFont 					rgb(255, 68, 68)
+*/
+
+
+
+
+textarea-box {
+	display: block;
+	position: relative;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+	padding-top: 0.5rem;
+	padding-right: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 0.5rem;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 4rem;
+	margin-left: 0;
+	background-color: var(--theme-highlightedBackgroundColor, rgba(0, 0, 0, 0.1));
+	transition-property: background-color;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+}
+
+textarea-box.error {
+	background-color: var(--theme-errorBackgroundColor, rgba(255, 0, 0, 0.2));
+}
+
+textarea-box .title {
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.8rem;
+	margin-bottom: 0.25rem;
+}
+
+textarea-box .title .titleElem {
+	color: var(--theme-secondaryFont, rgba(0, 0, 0, 0.6));
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	transition-property: color;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+}
+
+textarea-box .title .icon {
+	display: flex;
+	transition-property: opacity;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+	height: 2rem;
+	width: 2rem;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	cursor: pointer;
+}
+
+textarea-box.errorTemp .title .icon {
+	opacity: 1;
+}
+
+textarea-box .title .icon.active {
+	opacity: 0.5
+}
+
+textarea-box .title .icon.active:hover {
+	opacity: 1;
+}
+
+textarea-box .title .icon svg {
+	width: 66%;
+	fill: var(--theme-mainFont, rgba(0, 0, 0, 1));
+	transition-property: fill;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+}
+
+textarea-box.error .title .icon {
+	opacity: 1;
+}
+
+textarea-box .title .counterBox span {
+	color: var(--theme-secondaryFont, rgba(0, 0, 0, 0.6));
+	transition-property: color;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+}
+
+textarea-box .title .counterBox.warning span {
+	color: var(--theme-errorFont, rgb(255, 68, 68));
+}
+
+textarea-box .title .counterBox.acceptable span {
+	color: var(--theme-successBackgroundColor, rgba(0, 185, 64, 1));
+}
+
+textarea-box .body {
+	display: flex;
+}
+
+textarea-box .body .textarea {
+	flex: 1;
+	background-color: var(--theme-inputBackgroundColor, rgba(0, 0, 0, 0));
+	color: var(--theme-mainFont, rgba(0, 0, 0, 1));
+	min-height: 12rem;
+	transition-property: color;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+	resize: vertical;
+}
+
+textarea-box.mod_small .body .textarea {
+	min-height: 6rem;
+}
