@@ -2,6 +2,7 @@
 	@modCssClasses
 	@customTag: textarea-box
 	@cssMod: mod_small
+	@cssMod: mod_readOnly
 	--theme-transitionDuration 			0.15s
 	--theme-highlightedBackgroundColor 	rgba(0, 0, 0, 0.1)
 	--theme-errorBackgroundColor 		rgba(255, 0, 0, 0.2)
@@ -115,6 +116,10 @@ textarea-box .body .textarea {
 	transition-property: color;
 	transition-duration: var(--theme-transitionDuration, 0.15s);
 	resize: vertical;
+}
+
+textarea-box.mod_readOnly .body .textarea {
+	color: var(--theme-secondaryFont, rgba(0, 0, 0, 0.6));
 }
 
 textarea-box.mod_small .body .textarea {

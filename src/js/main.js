@@ -27,6 +27,7 @@
  * @param {HTMLElement|CSSRule}      schema.parent
  * @param {String}                  [schema.name]
  * @param {Boolean}                 [schema.htmlReady]
+ * @param {Boolean}                 [schema.readOnly]
  * @param {Boolean}                 [schema.counter]
  * @param {Number}                  [schema.maxWords]
  * @param {Number}                  [schema.minWords]
@@ -682,6 +683,13 @@ TextareaBox.prototype._createFromSchema = function() {
             this._textareaElem.focus();
 
         }
+
+    }
+
+    if ( this._schema.hasOwnProperty( 'readOnly' ) === true && this._schema.readOnly === true ) {
+
+        this._textareaElem.readOnly = true;
+        this._parentElem.classList.add( 'mod_readOnly' );
 
     }
 
