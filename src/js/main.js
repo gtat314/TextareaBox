@@ -148,6 +148,20 @@ function TextareaBox( schema ) {
      */
     this._inputName = null;
 
+    /**
+     * @property
+     * @private
+     * @type {CallableFunction}
+     */
+    this._handleClickIconElem = this._evt_click_iconElem.bind( this );
+
+    /**
+     * @property
+     * @private
+     * @type {CallableFunction}
+     */
+    this._handleInputTextareaElem = this._evt_input_textareaElem.bind( this );
+
 
 
 
@@ -180,7 +194,7 @@ function TextareaBox( schema ) {
 
     if ( this._iconElem !== null ) {
 
-        this._iconElem.addEventListener( 'click', this._evt_click_iconElem.bind( this ) );
+        this._iconElem.addEventListener( 'click', this._handleClickIconElem );
 
     }
 
@@ -236,7 +250,7 @@ function TextareaBox( schema ) {
 
     }
 
-    this._textareaElem.addEventListener( 'input', this._evt_input_textareaElem.bind( this ) );
+    this._textareaElem.addEventListener( 'input', this._handleInputTextareaElem );
     
 };
 
@@ -546,7 +560,7 @@ TextareaBox.prototype._createFromHTML = function() {
     if ( this._parentElem.querySelector( '.icon' ) ) {
 
         this._iconElem = this._parentElem.querySelector( '.icon' );
-        this._iconElem.addEventListener( 'click', this._evt_click_iconElem.bind( this ) );
+        this._iconElem.addEventListener( 'click', this._handleClickIconElem );
 
     }
 
