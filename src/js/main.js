@@ -165,7 +165,7 @@ function TextareaBox( schema ) {
 
 
 
-    if ( typeof this._schema.parent === 'object' ) {
+    if ( this._schema.parent instanceof HTMLElement ) {
 
         this._parentElem = this._schema.parent;
 
